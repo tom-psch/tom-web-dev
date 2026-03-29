@@ -1,0 +1,19 @@
+.mainButton {
+    font-family: var(--headingFontNoCaps);
+    background-color: var(--bgDark);
+    color: var(--secondaryColor);
+    border: 1px solid var(--secondaryColor);
+    border-radius: 16px;
+    font-size: 1.16rem;
+    height: 56px;
+    padding: 0 21px;
+    transition: 300ms;
+}
+
+@media(hover:hover){
+    .mainButton:hover {
+        background-color: var(--secondaryColor);
+        color: var(--bgDark);
+        cursor: pointer;
+    }
+}
