@@ -1,0 +1,103 @@
+.container {
+    background-color: var(--bgDark);
+    height: 862px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.cards {
+    /* flex-shrink: 0; */
+    display: grid;
+    /* grid-template-columns: 14rem minmax(1rem,1fr) 14rem minmax(1rem,1fr) 14rem; */
+    grid-auto-flow: column;
+    grid-auto-columns: 14rem;
+    gap: 5rem;
+    /* justify-content: space-between; */
+    /* width: 87vw; */
+    overflow-x: auto;
+    margin: 4rem 0 3.66rem;
+    /* border: 1px solid red; */
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    /* justify-content: center; */
+    /* column-gap: 5.5rem; */
+    /* column-gap: 1rem; */
+    /* padding: 0 50%; */
+
+
+}
+
+.cards > * {
+    scroll-snap-align: center;
+}
+/* .cards >:first-child {
+    grid-column: 1 / 1;
+}
+.cards >:nth-child(2) {
+    grid-column: 3 / 3;
+}
+.cards >:last-child {
+    grid-column: 5 / 5;
+} */
+@media (width <= 1250px) {
+    .cards {
+        width: 100%;
+        /* grid-template-columns: calc(50%-7rem) 14rem minmax(1rem,1fr) 14rem minmax(1rem,1fr) 14rem; */
+
+    }
+    .cards >:first-child {
+        /* grid-column: 2 / 2; */
+    }
+    /*.cards >:nth-child(2) {
+        grid-column: 4 / 4;
+    }
+    .cards >:last-child {
+        grid-column: 6 / 6;
+    } */
+}
+
+@media (width <= 834px) {
+    .cards {
+        /* width: 1000px; */
+        /* touch-action: none; */
+        /* touch-action: pan-x; */
+        /* transition: 500ms; */
+    }
+    /* .left section {
+        transform: translateX(calc(14rem + ((1000px - 42rem)) / 2));
+    }
+    .right section {
+        transform: translateX(calc(-1 * (14rem + ((1000px - 42rem)) / 2)));
+    }
+    .middle section {
+        transform: translateX(0);
+    } */
+}
+
+@media (width <= 450px) {
+    .cards {
+        /* width: 900px; */
+    }
+    /* .left section {
+        transform: translateX(calc(14rem + ((900px - 42rem)) / 2));
+    }
+    .right section {
+        transform: translateX(calc(-1 * (14rem + ((900px - 42rem)) / 2)));
+    }
+    .middle section {
+        transform: translateX(0);
+    } */
+}
+
+/* .cardScroller {
+    justify-items: center;
+    margin: 4rem 0 0;
+    width: 100%;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+} */
