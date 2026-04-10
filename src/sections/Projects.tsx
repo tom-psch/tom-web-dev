@@ -4,6 +4,7 @@ import Button from "../components/Button"
 import littlelemonPic from "../assets/little_lemon.png"
 import musicPic from "../assets/tom_music.png"
 import salonPic from "../assets/hair_day.png"
+import { useEffect, useRef } from "react"
 
 const projects = [
     {title: "resto website",
@@ -21,14 +22,22 @@ const projects = [
 ]
 
 export default function Projects () {
+const scrollerRef = useRef<HTMLElement>(null);
 
+useEffect (()=>{
+    if (scrollerRef.current) {
+        const a = scrollerRef.current.scrollWidth / 2, b = window.innerWidth / 2;
+        const offset = a - b;
+        scrollerRef.current.scroll(offset,0);
+    }
+},[])
     return (
         <main className={styles.container}>
             <svg className="line">
                 <line x1="0" x2="100%" strokeWidth="1px" y1="50%" y2="50%" />
             </svg>
             <h1 className="title">Proyect<span>s</span></h1>
-            <section className={styles.cards}>
+            <section className={styles.cards} ref={scrollerRef}>
                 {projects.map((project)=>
                     <Card project={project} key={project.title}/>
                 )}
