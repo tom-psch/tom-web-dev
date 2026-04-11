@@ -4,7 +4,7 @@ import Button from "../components/Button"
 import littlelemonPic from "../assets/little_lemon.png"
 import musicPic from "../assets/tom_music.png"
 import salonPic from "../assets/hair_day.png"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const projects = [
     {title: "resto website",
@@ -23,14 +23,28 @@ const projects = [
 
 export default function Projects () {
 const scrollerRef = useRef<HTMLElement>(null);
+const [size, setSize] = useState(window.innerWidth);
+
+const handleResize = () => {
+    const clientWidth = window.innerWidth;
+    if(clientWidth != size) {
+        setSize(clientWidth);
+    }
+}
 
 useEffect (()=>{
     if (scrollerRef.current) {
         const a = scrollerRef.current.scrollWidth / 2, b = window.innerWidth / 2;
         const offset = a - b;
-        scrollerRef.current.scroll(offset,0);
+        scrollerRef.current.scroll({left: offset, behavior:"instant"});
+
     }
-},[])
+},[size])
+useEffect(()=>{
+    window.addEventListener("resize", handleResize);
+    return ()=>window.removeEventListener("resize", handleResize)
+}, [])
+
     return (
         <main className={styles.container}>
             <svg className="line">
