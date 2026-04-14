@@ -1,25 +1,18 @@
 .container ul{
     display: flex;
-    /* width: 928px; */
     width: 38.7rem;
-    /* height: 2.5rem; */
-    /*margin: -0.65rem 0 0; */
-    /* justify-content: space-between; */
     align-items: center;
-    /* outline: 1px solid red; */
     transition: 300ms;
     position: relative;
 }
 .container li {
     list-style: none;
-    /* height: 53px; */
     height: 2.2rem;
     transition: 300ms;
     width: 100%;
     display: block;
     text-align: center;
     opacity: 0.6;
-    /* outline: 1px solid blue; */
 
 }
 
@@ -39,7 +32,6 @@
     @media(width > 700px) {
         .container li:hover {
             transform: scale(1.5);
-            /* height: 3.3rem; */
             opacity: 1;
             z-index: 1;
         }
@@ -59,7 +51,8 @@
     .container {
         display: flex;
         flex-direction: row;
-        animation: marquee 40s linear infinite;
+        flex-wrap: nowrap;
+        animation: marquee 30s linear infinite;
         overflow: hidden;
         align-self: flex-start;
     }

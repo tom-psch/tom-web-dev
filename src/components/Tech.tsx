@@ -45,12 +45,14 @@ const handleResize = ()=>{
         <div className={styles.container}>
             <ul>
                 {icons.map((icon) => <li key={icon[0]} className={styles[icon[2]]}><img src={icon[0]} alt={icon[1]}></img></li>)}
+                {smallScreen && icons.map((icon) => <li key={icon[0]} className={styles[icon[2]]}><img src={icon[0]} alt={icon[1]}></img></li>)}
+                {smallScreen && icons.map((icon) => <li key={icon[0]} className={styles[icon[2]]}><img src={icon[0]} alt={icon[1]}></img></li>)}
             </ul>
-            {smallScreen && <ul>
+            {/* {smallScreen && <ul>
                 {icons.map((icon) => <li key={icon[0]} className={styles[icon[2]]}><img src={icon[0]} alt={icon[1]}></img></li>)}
                 {icons.map((icon) => <li key={icon[0]} className={styles[icon[2]]}><img src={icon[0]} alt={icon[1]}></img></li>)}
             </ul>
-            }
+            } */}
         </div>
 
     )
